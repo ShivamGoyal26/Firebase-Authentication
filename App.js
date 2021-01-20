@@ -1,20 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import AuthScreens from './Navigators/Navigator';
 
-const App = props => {
+const App = () => {
   return(
-    <View style={styles.screen}>
-      <Text>Hello there</Text>
-    </View>
+   <AuthScreens></AuthScreens>
   );
 };
 
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-});
 
 export default App;
