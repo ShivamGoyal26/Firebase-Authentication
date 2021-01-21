@@ -5,11 +5,15 @@ import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useContext } from 'react';
+import {AuthContext} from '../Navigators/AuthProvider';
 
 const SignupScreen = props => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
+
+  const {register} = useContext(AuthContext);
   return (
     <View style={{ flex: 1 }} >
       <TouchableOpacity>
@@ -50,7 +54,8 @@ const SignupScreen = props => {
 
         <FormButton
           buttonTitle="Sign Up"
-          action={() => alert("Sign in clicked")}
+          action={() => register(email, password)}
+          // action={()=> alert("Clicked")}
         />
         <View style={styles.textPrivate}>
           <Text style={styles.color_textPrivate}>By registering, you confirm that you accept our</Text>

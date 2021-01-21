@@ -1,10 +1,13 @@
 import React from 'react';
-import AuthStack from './Navigators/AuthStack';
-// import Routes from './Navigators/Routes';
+import Routes from './Navigators/Routes';
+import { AuthProvider } from './Navigators/AuthProvider';
 
 const App = () => {
-// return(<Routes></Routes>);
-return(<AuthStack />);
+    return (
+        <AuthProvider>
+            <Routes/>
+        </AuthProvider>
+    );
 }
 
 export default App;

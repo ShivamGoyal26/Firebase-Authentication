@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
-import { color } from 'react-native-reanimated';
+
+import {AuthContext} from '../Navigators/AuthProvider';
 
 const LoginScreen = props => {
+  const {login} = useContext(AuthContext);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   return (
@@ -36,7 +38,7 @@ const LoginScreen = props => {
 
       <FormButton
         buttonTitle="Sign In"
-        action={() => alert("Sign in clicked")}
+        action={() => login(email, password)}
       />
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => { }}>
@@ -73,7 +75,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    // paddingTop: 50
   },
 
   text: {

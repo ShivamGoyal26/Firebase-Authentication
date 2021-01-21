@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export const AuthContext = createContext();
 
-export const AuthProvider = props => {
+export const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     return (
         <AuthContext.Provider
@@ -39,7 +39,7 @@ export const AuthProvider = props => {
 
             }}
         >
-            {props.children}
+            {children}
         </AuthContext.Provider>
     );
 }
