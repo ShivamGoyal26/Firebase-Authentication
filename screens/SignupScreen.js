@@ -13,7 +13,7 @@ const SignupScreen = props => {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
-  const {register} = useContext(AuthContext);
+  const {register, googleLogin} = useContext(AuthContext);
   return (
     <View style={{ flex: 1 }} >
       <TouchableOpacity>
@@ -77,7 +77,7 @@ const SignupScreen = props => {
           btnType='google'
           color='#de4d41'
           bgColor='#f5e7ea'
-          action={() => props.navigation.navigate("Signup")}
+          action={() => googleLogin()}
         />
 
         <TouchableOpacity style={styles.navButton} onPress={() => props.navigation.pop()}>
