@@ -9,6 +9,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const SignupScreen = props => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
   return (
     <View style={{ flex: 1 }} >
       <TouchableOpacity>
@@ -39,6 +40,14 @@ const SignupScreen = props => {
           secureTextEntry={true}
         />
 
+        <FormInput
+          labelValue={confirmPassword}
+          onChangeText={(userConfirmPassword) => setConfirmPassword(userConfirmPassword)}
+          placeholderText="Confirm Password"
+          iconType='lock'
+          secureTextEntry={true}
+        />
+
         <FormButton
           buttonTitle="Sign Up"
           action={() => alert("Sign in clicked")}
@@ -51,7 +60,7 @@ const SignupScreen = props => {
         </View>
 
         <SocialButton
-          buttonTitle='Sign In with Facebook'
+          buttonTitle='Sign Up with Facebook'
           btnType='facebook'
           color='#4867aa'
           bgColor='#e6eaf4'
@@ -59,15 +68,15 @@ const SignupScreen = props => {
         />
 
         <SocialButton
-          buttonTitle='Sign In with Google'
+          buttonTitle='Sign Up with Google'
           btnType='google'
           color='#de4d41'
           bgColor='#f5e7ea'
           action={() => props.navigation.navigate("Signup")}
         />
 
-        <TouchableOpacity style={styles.forgotButton} onPress={() => props.navigation.navigate("Signup")}>
-          <Text style={styles.navButtonText}>Don't have an account? create here</Text>
+        <TouchableOpacity style={styles.navButton} onPress={() => props.navigation.pop()}>
+          <Text style={styles.navButtonText}>Have an account? Sign In</Text>
         </TouchableOpacity>
       </View>
     </View>

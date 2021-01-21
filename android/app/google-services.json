@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "526327767647",
+    "project_id": "chat-app-in-react-native-6c6de",
+    "storage_bucket": "chat-app-in-react-native-6c6de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526327767647:android:5c465e566f6ed05b19b1ea",
+        "android_client_info": {
+          "package_name": "com.firebaseauthenticationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526327767647-4g8dd6dkrastmop550fbk0855qn1qrjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3jgvIeYPVrkXWx7CE-n9jGlltX1wq3L0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526327767647-4g8dd6dkrastmop550fbk0855qn1qrjt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
