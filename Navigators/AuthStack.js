@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AuthScreens from './Navigator'
+import { GoogleSignin } from '@react-native-community/google-signin';
 
 
 const AuthStack = () => {
@@ -15,7 +16,10 @@ const AuthStack = () => {
       else{
         setIsFirstLaunch(false);
       }
-    })
+    });
+    GoogleSignin.configure({
+      webClientId: '526327767647-4g8dd6dkrastmop550fbk0855qn1qrjt.apps.googleusercontent.com',
+    });
   }, []);
 
   if(isFirstLaunch === null){

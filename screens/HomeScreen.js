@@ -4,12 +4,14 @@ import { useContext } from 'react';
 import {AuthContext} from '../Navigators/AuthProvider';
 
 const HomeScreen = props => {
-    const {logout} = useContext(AuthContext);
+    const {user, logout} = useContext(AuthContext);
 return(
     <View style={styles.screen}>
         <Text>
             Home Screen
         </Text>
+        <Text>{user.email}</Text>
+        <Text>{user.uid}</Text>
         <Button title="Logout" onPress={() => {logout()}}/>
         <Button title="Next Screen" onPress={() => {props.navigation.navigate("chat")}}/>
     </View>

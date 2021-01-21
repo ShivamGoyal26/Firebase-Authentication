@@ -20,10 +20,9 @@ const Routes = () => {
     }
 
     useEffect(() => {
-        console.log(user)
         const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
         return subscriber;
-    }, [])
+    },[])
 
     if (initializing) return null;
 

@@ -7,7 +7,7 @@ import SocialButton from '../components/SocialButton';
 import {AuthContext} from '../Navigators/AuthProvider';
 
 const LoginScreen = props => {
-  const {login} = useContext(AuthContext);
+  const {login, googleLogin} = useContext(AuthContext);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   return (
@@ -58,7 +58,7 @@ const LoginScreen = props => {
         btnType='google'
         color='#de4d41'
         bgColor='#f5e7ea'
-        action={() => props.navigation.navigate("Signup")}
+        action={() => googleLogin()}
       />
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => props.navigation.navigate("Signup")}>
